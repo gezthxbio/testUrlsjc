@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Redirecting to App Store...</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload = function () {
+      var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+      // iOS detection
+      if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        window.location.href = "https://apps.apple.com/ae/app/st-josephs-church-abu-dhabi/id6744367707";
+      }
+      // Android detection
+      else if (/android/i.test(userAgent)) {
+        window.location.href = "https://play.google.com/store/apps/details?id=com.boscosoft.stjoseph_abudhabi";
+      }
+      // Fallback for other devices
+      else {
+        window.location.href = "https://stjosephsabudhabi.org/";
+      }
+    };
+  </script>
+</head>
+<body>
+  <p>Redirecting you to the appropriate app store...</p>
+</body>
+</html>
